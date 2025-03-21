@@ -1,0 +1,13 @@
+A flowchart typically consists of the following components:
+
+Start/End: Represented by ovals, showing the beginning and end points of the process.
+
+Process: A rectangle that indicates a step or action in the process.
+
+Decision: A diamond shape used to represent a decision point, typically with "Yes" or "No" branches.
+
+Input/Output: A parallelogram, representing data input or output.
+
+Arrow: Lines that connect the various steps, showing the flow of the process.
+
+Connector: A small circle or off-page connector used to link different parts of a flowchart.

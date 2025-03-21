@@ -1,0 +1,13 @@
+Pseudocode:
+Pseudocode is a simple, plain-language description of an algorithm.
+It uses structured steps similar to programming but without strict syntax rules.
+It helps programmers plan the logic of a program before coding.
+It’s easy to understand and convert to actual code.
+Pseudocode focuses on the steps and logic rather than specific coding language syntax.
+
+Flowcharts:
+Flowcharts are visual diagrams that represent a process or algorithm.
+They use symbols like ovals, rectangles, and diamonds to show steps and decision points.
+Arrows connect these symbols to indicate the flow of the process.
+Flowcharts help simplify complex processes and are easy to understand.
+They provide a clear, step-by-step visualization of how a system or algorithm works.
