@@ -1,0 +1,50 @@
+**Summary of Operators for Problem Solving in Java**
+
+### 1. **Arithmetic Operators**
+   - Used for basic mathematical operations.
+   - `+` (Addition), `-` (Subtraction), `*` (Multiplication), `/` (Division), `%` (Modulus)
+
+### 2. **Relational (Comparison) Operators**
+   - Used to compare values.
+   - `==` (Equal to), `!=` (Not equal to), `>` (Greater than), `<` (Less than), `>=` (Greater than or equal to), `<=` (Less than or equal to)
+
+### 3. **Logical Operators**
+   - Used for boolean logic.
+   - `&&` (Logical AND), `||` (Logical OR), `!` (Logical NOT)
+
+### 4. **Bitwise Operators** (Used in Bit Manipulation)
+   - `&` (Bitwise AND): Sets bit to 1 if both bits are 1.
+   - `|` (Bitwise OR): Sets bit to 1 if at least one bit is 1.
+   - `^` (Bitwise XOR): Sets bit to 1 if bits are different.
+   - `~` (Bitwise NOT): Flips all bits (one's complement).
+   - `<<` (Left Shift): Shifts bits left (Multiplication by 2^n).
+   - `>>` (Right Shift): Shifts bits right (Division by 2^n).
+   - `>>>` (Unsigned Right Shift): Similar to `>>` but fills left bits with 0.
+
+### 5. **Assignment Operators**
+   - Used to assign values to variables.
+   - `=` (Assign), `+=` (Add and assign), `-=` (Subtract and assign), `*=` (Multiply and assign), `/=` (Divide and assign), `%=` (Modulus and assign)
+
+### 6. **Unary Operators** (Used on a single operand)
+   - `+` (Unary plus), `-` (Unary minus)
+   - `++` (Increment): Increases value by 1 (`x++`, `++x`)
+   - `--` (Decrement): Decreases value by 1 (`x--`, `--x`)
+   - `!` (Logical NOT): Inverts a boolean value.
+   - `~` (Bitwise Complement): Inverts all bits.
+
+### 7. **Ternary Operator**
+   - Used for concise conditional statements.
+   - Syntax: `condition ? expr1 : expr2`
+   - Example: `int min = (a < b) ? a : b;`
+
+### 8. **Instanceof Operator**
+   - Used to check if an object is an instance of a class.
+   - Example: `if (obj instanceof String)`
+
+**Common Use Cases in Problem-Solving:**
+- Checking even/odd using `&`
+- Swapping numbers using `^`
+- Finding unique numbers using `^`
+- Checking if a number is a power of 2 using `n & (n - 1)`
+- Counting set bits using `n & (n - 1)`
+
