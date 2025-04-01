@@ -1,4 +1,4 @@
-**Summary of Operators for Problem Solving in Java**
+**Summary of Operators for Problem-Solving in Java**
 
 ### 1. **Arithmetic Operators**
    - Used for basic mathematical operations.
