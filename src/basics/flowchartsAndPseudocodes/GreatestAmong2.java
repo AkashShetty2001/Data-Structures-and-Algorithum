@@ -1,4 +1,4 @@
-package basics;
+package basics.flowchartsAndPseudocodes;
 
 import java.util.Scanner;
 
