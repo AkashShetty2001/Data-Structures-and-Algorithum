@@ -1,0 +1,119 @@
+Loops in DSA using Java
+
+Loops are fundamental control flow structures in programming,
+particularly crucial in Data Structures and Algorithms (DSA).
+They allow us to repeatedly execute a block of code until a certain condition is met.
+ In Java, we primarily use `for`, `while`, and `do-while` loops.
+
+Types of Loops in Java:
+
+1.  `for` loop:
+    * The `for` loop is used when you know the number of iterations in advance.
+    * It consists of three parts: initialization, condition, and increment/decrement.
+    * Syntax:
+
+    ```java
+    for (initialization; condition; increment/decrement) {
+        // code to be executed
+    }
+    ```
+
+    * Example: Printing numbers from 1 to 5.
+
+    ```java
+    for (int i = 1; i <= 5; i++) {
+        System.out.println(i);
+    }
+    ```
+
+2.  `while` loop:
+    * The `while` loop is used when you don't know the number of iterations beforehand,
+     and the loop continues as long as a specified condition is true.
+    * Syntax:
+
+    ```java
+    while (condition) {
+        // code to be executed
+    }
+    ```
+
+    * Example: Reading input until a specific value is entered.
+
+    ```java
+    import java.util.Scanner;
+
+    public class WhileExample {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int input = 0;
+            while (input != -1) {
+                System.out.print("Enter a number (-1 to exit): ");
+                input = scanner.nextInt();
+                if (input != -1) {
+                    System.out.println("You entered: " + input);
+                }
+            }
+            scanner.close();
+        }
+    }
+    ```
+
+3.  `do-while` loop:
+    * The `do-while` loop is similar to the `while` loop, but it guarantees that the code block is executed at least once, even if the condition is initially false.
+    * Syntax:
+
+    ```java
+    do {
+        // code to be executed
+    } while (condition);
+    ```
+
+    * Example: A simple menu driven program that always displays the menu at least once.
+
+    ```java
+    import java.util.Scanner;
+
+    public class DoWhileExample {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int choice;
+            do {
+                System.out.println("1. Option 1");
+                System.out.println("2. Option 2");
+                System.out.println("3. Exit");
+                System.out.print("Enter your choice: ");
+                choice = scanner.nextInt();
+            } while (choice != 3);
+            scanner.close();
+        }
+    }
+    ```
+
+When to Use Them:
+
+* `for` loop:
+    * When you know the exact number of iterations.
+    * Iterating through arrays or lists.
+    * Performing operations a specific number of times.
+
+* `while` loop:
+    * When the number of iterations is unknown.
+    * Reading data from a stream until a specific condition is met.
+    * Implementing algorithms that require repeated execution until a certain state is reached.
+
+* `do-while` loop:
+    * When you need to execute the loop body at least once.
+    * Menu-driven programs.
+    * Input validation.
+
+Uses of Loops in DSA:
+
+* Array Traversal: Loops are used to access and manipulate elements in arrays.
+* Linked List Traversal: Loops are used to traverse linked lists and perform operations on nodes.
+* Searching and Sorting Algorithms: Algorithms like linear search, binary search, bubble sort, and insertion sort heavily rely on loops.
+* Graph Traversal: Algorithms like Breadth-First Search (BFS) and Depth-First Search (DFS) use loops to explore graph nodes.
+* String Manipulation: Loops are used to process characters in strings.
+* Dynamic Programming: Loops are essential for building solutions in dynamic programming problems.
+* Tree Traversal: Algorithms relating to tree traversal, like inorder, preorder, and postorder, often utilize loops.
+* Iterating through Data Structures: Any time you need to go through every item in a data structure, you will use a loop.
+* Repetitive Calculations: Any mathematical or computational problem that requires repeated steps, like calculating factorials or powers.
