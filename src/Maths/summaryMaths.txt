@@ -1,0 +1,77 @@
+/*
+ * ================================
+ * Important Math Concepts for DSA
+ * ================================
+ *
+ * 1️⃣ Time Complexity Analysis:
+ *    - O(1): Constant time
+ *    - O(log n): Logarithmic time (e.g., Binary Search)
+ *    - O(n): Linear time (e.g., Simple Loop)
+ *    - O(n log n): Linearithmic (e.g., Merge Sort, Quick Sort)
+ *    - O(n^2): Quadratic time (e.g., Nested Loops)
+ *
+ * 2️⃣ Counting Digits in a Number:
+ *    int count = 0;
+ *    while(n > 0){
+ *        n = n / 10;
+ *        count++;
+ *    }
+ *
+ * 3️⃣ Reverse a Number:
+ *    int rev = 0;
+ *    while(n > 0){
+ *        int digit = n % 10;
+ *        rev = rev * 10 + digit;
+ *        n = n / 10;
+ *    }
+ *
+ * 4️⃣ Palindrome Check (Number or String):
+ *    Reverse the number/string and compare with original.
+ *
+ * 5️⃣ GCD (Euclidean Algorithm):
+ *    int gcd(int a, int b){
+ *        if(b == 0) return a;
+ *        return gcd(b, a % b);
+ *    }
+ *    Time Complexity: O(log min(a, b))
+ *
+ * 6️⃣ LCM:
+ *    lcm(a, b) = (a * b) / gcd(a, b)
+ *
+ * 7️⃣ Armstrong Number Check:
+ *    Sum of digits^number_of_digits == original number.
+ *
+ * 8️⃣ Print All Divisors:
+ *    for(int i = 1; i * i <= n; i++){
+ *        if(n % i == 0){
+ *            print(i);
+ *            if(i != n/i) print(n/i);
+ *        }
+ *    }
+ *    Time Complexity: O(√n)
+ *
+ * 9️⃣ Prime Check:
+ *    Optimal Approach:
+ *    for(int i = 2; i * i <= n; i++){
+ *        if(n % i == 0) return false;
+ *    }
+ *    Time Complexity: O(√n)
+ *
+ * 🔟 Modulo Arithmetic:
+ *    (a + b) % m = ( (a % m) + (b % m) ) % m
+ *    (a - b) % m = ( (a % m) - (b % m) + m) % m
+ *    (a * b) % m = ( (a % m) * (b % m) ) % m
+ *
+ * 1️⃣1️⃣ Time Complexity of HashMap/HashSet Operations:
+ *    • Average Case: O(1) for insert, delete, search
+ *    • Worst Case: O(n) (due to hash collision, but rare with good hashing function)
+ *
+ * ✅ Remember:
+ *    • Always analyze both Time and Space Complexity.
+ *    • Base Case is mandatory to prevent stack overflow in recursion.
+ *    • Understand how input size reduces per step in recursive calls.
+ *
+ * ==============================================
+ * Keep this file as your reference while solving problems
+ * and revising concepts.
+ */
