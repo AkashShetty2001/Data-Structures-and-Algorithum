@@ -1,0 +1,181 @@
+/*
+ * Hashing in Java - Theory Notes
+ *
+ * 1. What is Hashing?
+ * -------------------
+ * Hashing is a technique used to map data of arbitrary size into a fixed-size table (called a hash table).
+ * It uses a "hash function" to compute an index (bucket) where the data should be stored.
+ *
+ * Example:
+ * Hash function h(x) = x % 10
+ * For key = 23, h(23) = 3 → stored at index 3
+ *
+ * 2. Key Concepts:
+ * ----------------
+ * - Hash Function: Function that maps keys to indices.
+ * - Hash Table: Array-like structure where hashed values are stored.
+ * - Collisions: When two keys hash to the same index.
+ * - Load Factor (α): ratio = (number of elements) / (table size).
+ *   In Java's HashMap, default load factor = 0.75.
+ *
+ * 3. Collision Handling:
+ * ----------------------
+ * - Chaining: Store multiple elements in a linked list at the same index.
+ * - Open Addressing: Find another empty slot using probing (linear, quadratic, double hashing).
+ *
+ * 4. Performance:
+ * ---------------
+ * - Average Time Complexity for search, insert, delete = O(1).
+ * - Worst Case = O(n) (if many collisions).
+ *
+ * 5. Rehashing:
+ * -------------
+ * Rehashing means resizing the hash table and re-inserting all elements.
+ *
+ * Why?
+ * - As the load factor increases (> 0.75 for HashMap), collisions rise and performance drops.
+ *
+ * How?
+ * - Create a new table with bigger size (usually double).
+ * - Recompute hash for each element and put it in the new table.
+ *
+ * Example:
+ * - Suppose initial capacity = 16.
+ * - When size > 16 * 0.75 = 12, rehashing happens.
+ * - New capacity = 32.
+ * - All keys are redistributed into new buckets.
+ *
+ * Effect:
+ * - Ensures average O(1) time complexity is maintained.
+ *
+ * 6. HashMap vs HashSet:
+ * -----------------------
+ * - HashMap: Stores key-value pairs (unique keys).
+ * - HashSet: Uses HashMap internally, stores only keys (unique elements).
+ *
+ * Summary:
+ * --------
+ * Hashing is powerful for fast data retrieval and storage.
+ * Rehashing ensures that the structure remains efficient as it grows.
+ */
+
+/*
+ ================== HASHMAP NOTES ==================
+
+ 1. HashMap Basics:
+    - Stores data in (Key, Value) pairs.
+    - Keys are unique, values can repeat.
+    - Uses hashing internally.
+    - Average Time Complexity: O(1) for put(), get(), remove().
+
+ 2. Common Methods:
+    - put(key, value) → insert/update
+    - get(key) → fetch value
+    - remove(key) → delete entry
+    - containsKey(key), containsValue(value)
+    - size(), isEmpty(), clear()
+
+ 3. Iteration Ways:
+    - For-each on entrySet()
+    - For-each on keySet()
+    - For-each on values()
+    - Using Iterator
+
+ ---------------------------------------------------
+*/
+public class HashMapNotes {
+    public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap<>();
+
+        // Insertion
+        map.put("Apple", 2);
+        map.put("Banana", 5);
+        map.put("Mango", 7);
+
+        // Update
+        map.put("Apple", 10);
+
+        // Access
+        System.out.println("Apple count = " + map.get("Apple")); // 10
+
+        // Check existence
+        System.out.println("Contains Mango? " + map.containsKey("Mango"));
+
+        // Remove
+        map.remove("Banana");
+
+        // Iteration 1: entrySet
+        for (Map.Entry<String, Integer> e : map.entrySet()) {
+            System.out.println(e.getKey() + " => " + e.getValue());
+        }
+
+        // Iteration 2: keySet
+        for (String key : map.keySet()) {
+            System.out.println(key + " -> " + map.get(key));
+        }
+
+        // Iteration 3: values
+        for (Integer val : map.values()) {
+            System.out.println("Value = " + val);
+        }
+    }
+}
+package revision;
+
+import java.util.*;
+
+/*
+ ================== HASHSET NOTES ==================
+
+ 1. HashSet Basics:
+    - Stores only unique elements.
+    - Implements Set interface.
+    - Backed by HashMap internally.
+    - Average Time Complexity: O(1) for add(), contains(), remove().
+
+ 2. Common Methods:
+    - add(element)
+    - remove(element)
+    - contains(element)
+    - size(), isEmpty(), clear()
+
+ 3. Iteration Ways:
+    - For-each loop
+    - Iterator
+    - forEach + Lambda
+
+ ---------------------------------------------------
+*/
+
+public class HashSetNotes {
+    public static void main(String[] args) {
+        HashSet<Integer> set = new HashSet<>();
+
+        // Add elements
+        set.add(10);
+        set.add(20);
+        set.add(30);
+        set.add(20); // Duplicate ignored
+
+        // Access
+        System.out.println("Contains 10? " + set.contains(10));
+
+        // Remove
+        set.remove(30);
+
+        // Iteration 1: For-each loop
+        for (int num : set) {
+            System.out.println("Num: " + num);
+        }
+
+        // Iteration 2: Iterator
+        Iterator<Integer> it = set.iterator();
+        while (it.hasNext()) {
+            System.out.println("Iter: " + it.next());
+        }
+
+        // Iteration 3: Lambda
+        set.forEach(e -> System.out.println("Lambda: " + e));
+    }
+}
+
