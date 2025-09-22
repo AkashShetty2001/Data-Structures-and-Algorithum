@@ -9,6 +9,7 @@ public class FibonacciNumber {
         int n = sc.nextInt();
 
         System.out.println("The " + n + "th Fibonacci number is: " + fibo(n));
+        System.out.println(fib(n));
         sc.close();
     }
 
@@ -34,6 +35,21 @@ public class FibonacciNumber {
         // Recursive step: The nth Fibonacci number is the sum of the (n-1)th
         // and (n-2)th Fibonacci numbers.
         return fibo(n - 1) + fibo(n - 2);
+    }
+
+    public static int fib(int n){
+        int f=0;
+        int s=1;
+        int c=0;
+        int count =2;
+
+        while(count <= n){
+            c=f+s;
+            f=s;
+            s=c;
+            count++;
+        }
+        return c;
     }
 }
 /*

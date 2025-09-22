@@ -1,0 +1,68 @@
+/*
+ ================== BASIC RECURSION REVISION SHEET ==================
+
+ 1. Recursion Basics
+    - Function calls itself (directly/indirectly).
+    - Always needs:
+        1. Base Case → stops recursion.
+        2. Recursive Case → reduces input.
+    - Watch out: Infinite recursion = StackOverflowError.
+
+    Types:
+      - Linear Recursion → 1 recursive call (Factorial, Sum).
+      - Tree Recursion → ≥ 2 recursive calls (Fibonacci).
+
+    Debugging Tip:
+      - "Step Into" shows recursive calls, "Step Over" skips inside details.
+
+ -------------------------------------------------------------------
+
+ 2. Problems & Intuition
+
+ a) Print N to 1 (Tail Recursion)
+    - Do work, then recurse.
+    - Intuition: each call prints immediately, then reduces n.
+    - TC: O(n), SC: O(n)
+
+ b) Print 1 to N (Backtracking style)
+    - Recurse first, then do work.
+    - Intuition: stack unwinds in reverse, so printing is "delayed".
+    - TC: O(n), SC: O(n)
+
+ c) Sum of First N Natural Numbers
+    - Recursive call reduces n → add into sum.
+    - TC: O(n), SC: O(n)
+
+ d) Factorial (n!)
+    - Base: 0! = 1, 1! = 1
+    - Recurrence: n! = n * (n-1)!
+    - TC: O(n), SC: O(n)
+
+ e) Palindrome Check (String)
+    - Compare left & right chars at each recursion.
+    - If mismatch → false, else shrink input.
+    - Base: l > r ⇒ true.
+    - TC: O(n), SC: O(n)
+
+ f) Reverse an Array
+    - Swap arr[l] & arr[r], then recurse inward.
+    - Base: l > r ⇒ stop.
+    - TC: O(n), SC: O(n)
+
+ g) Fibonacci (Tree Recursion)
+    - Base: fib(0)=0, fib(1)=1
+    - Recurrence: fib(n) = fib(n-1) + fib(n-2)
+    - Exponential tree of calls.
+    - TC: O(2^n), SC: O(n)
+
+ -------------------------------------------------------------------
+
+ 3. Key Takeaways
+    - Every recursion = smaller subproblems + base case.
+    - Stack trace shows the order of calls (left calls finish before right).
+    - Linear recursion = efficient; tree recursion = exponential unless optimized.
+    - Space complexity mostly = recursion depth.
+    - Think in terms of "decisions + choices" when unsure.
+
+ -------------------------------------------------------------------
+*/

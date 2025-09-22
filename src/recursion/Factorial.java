@@ -12,6 +12,7 @@ public class Factorial {
         int n = sc.nextInt();
 
         System.out.println("Factorial of " + n + " is: " + fact(n));
+        System.out.println("Factorial of " + n + "  iterative is: " + factIterative(n));
         sc.close();
     }
 
@@ -30,6 +31,15 @@ public class Factorial {
         // Recursive step: n! = n * (n-1)!
         return n * fact(n - 1);
     }
+
+    public static int factIterative(int n){
+        int fact=1;
+        for(int i=2;i<=n;i++){
+            fact*=i;
+        }
+        return fact;
+    }
+
 }
 /*
  * Logic Summary:
