@@ -1,4 +1,4 @@
-package arrays.OneDArray;
+package arrays.OneDArray.basic;
 
 public class ArrayConcept {
     public static void main(String[] args) {
