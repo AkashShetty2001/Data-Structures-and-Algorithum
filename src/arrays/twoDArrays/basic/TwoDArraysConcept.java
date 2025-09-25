@@ -1,4 +1,4 @@
-package arrays.two_dArrays;
+package arrays.twoDArrays;
 
 import java.util.Scanner;
 

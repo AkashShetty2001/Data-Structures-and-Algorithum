@@ -1,0 +1,96 @@
+package arrays.patterns;
+
+/**
+ * ===================== TWO POINTERS TECHNIQUE =====================
+ *
+ * 1. WHAT IS TWO POINTERS?
+ *    - A problem-solving technique where we use two indices (pointers)
+ *      to traverse an array or string, usually from opposite ends
+ *      OR moving at different speeds.
+ *
+ * 2. WHY USE IT?
+ *    - Reduces time complexity (often from O(n^2) to O(n)).
+ *    - Helps avoid nested loops by processing elements from both ends.
+ *    - Efficient for problems involving:
+ *         - Sorted arrays
+ *         - Subarrays/substrings
+ *         - Pair/triplet problems
+ *         - Sliding window
+ *
+ * 3. INTUITION (WHEN TO THINK OF IT):
+ *    - If the array/string is sorted → try two pointers from both ends.
+ *    - If we need a pair that satisfies some condition (sum, diff, etc).
+ *    - If we need to "shrink or expand" a window.
+ *    - If we want to compare left vs right values simultaneously.
+ *
+ * 4. TYPES OF TWO POINTERS:
+ *    a) Opposite Ends:
+ *       - Left pointer starts at beginning, right pointer at end.
+ *       - Example: Pair sum in sorted array, palindrome check.
+ *
+ *    b) Same Direction (Fast & Slow Pointers):
+ *       - Both pointers move from left to right.
+ *       - One moves faster, the other slower.
+ *       - Example: Detect cycle in linked list, removing duplicates.
+ *
+ * ===================================================================
+ *
+ * COMMON EXAMPLES:
+ *
+ * Example 1: Check if array has a pair with given sum (sorted array).
+ * Example 2: Reverse an array in-place.
+ * Example 3: Check if a string is palindrome.
+ * Example 4: Move all zeros to the end (variation).
+ *
+ */
+public class TwoPointersDemo {
+
+    // Example 1: Check if array has a pair with sum = target (Sorted Array)
+    public static boolean hasPairWithSum(int[] arr, int target) {
+        int left = 0, right = arr.length - 1;
+        while (left < right) {
+            int sum = arr[left] + arr[right];
+            if (sum == target) return true;
+            else if (sum < target) left++;
+            else right--;
+        }
+        return false;
+    }
+
+    // Example 2: Reverse an array in-place
+    public static void reverseArray(int[] arr) {
+        int left = 0, right = arr.length - 1;
+        while (left < right) {
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;
+        }
+    }
+
+    // Example 3: Check if a string is palindrome
+    public static boolean isPalindrome(String s) {
+        int left = 0, right = s.length() - 1;
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) return false;
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 4, 5, 7, 11};
+        System.out.println("Pair with sum 9 exists: " + hasPairWithSum(arr, 9));
+
+        int[] nums = {1, 2, 3, 4, 5};
+        reverseArray(nums);
+        System.out.print("Reversed Array: ");
+        for (int n : nums) System.out.print(n + " ");
+        System.out.println();
+
+        String str = "madam";
+        System.out.println("Is Palindrome: " + isPalindrome(str));
+    }
+}

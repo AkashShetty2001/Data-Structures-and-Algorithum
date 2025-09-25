@@ -1,6 +1,5 @@
-package arrays;
+package arrays.OneDArray;
 
-import java.util.Arrays;
 public class ArrayConcept {
     public static void main(String[] args) {
 
